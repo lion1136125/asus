@@ -147,7 +147,7 @@ body {
   color: #fff;
 }
 
-/* 헤드라인 (이제 한 줄만) */
+/* 헤드라인 */
 .hero-headline-row {
   display: flex;
   flex-wrap: wrap;
@@ -186,12 +186,19 @@ body {
   }
 }
 
-/* ACTION BUTTONS + 전화번호 배지 */
+/* ACTION BUTTONS (온라인 / 수리 / 번호) */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;      /* 모바일: 세로 */
   gap: 12px;
   margin-bottom: 24px;
+}
+@media (min-width: 600px) {
+  .hero-actions {
+    flex-direction: row;       /* 큰 화면: 가로 */
+    align-items: flex-start;
+  }
 }
 
 .hero-call,
@@ -210,19 +217,30 @@ body {
   white-space: nowrap;
 }
 
+/* 대표번호(1544-6068) 버튼은 더 굵고 큼 */
 .headline-call {
   font-weight: 700;
   font-size: 1.1rem;
   box-shadow: 0 14px 30px rgba(0,82,204,0.6);
 }
-@media (min-width: 600px) {
-  .headline-call {
-    font-size: 1.2rem;
+
+/* 모바일에서
+   - hero-goform(📞 수리 접수하기) 숨김
+   - headline-call 버튼에 "수리 접수하기" 텍스트를 덧붙여서
+     한 번만 보여줌 */
+@media (max-width: 599px) {
+  .hero-goform {
+    display: none;
   }
-}
-@media (min-width: 960px) {
   .headline-call {
-    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+  }
+  .headline-call::after {
+    content: " 수리 접수하기";
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-left: 6px;
   }
 }
 
