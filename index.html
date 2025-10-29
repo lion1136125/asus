@@ -12,10 +12,10 @@
   <!-- 상단 고정 헤더 -->
   <header class="site-header">
     <div class="container header-inner">
+
+      <!-- 왼쪽 브랜드 영역 (이미지 없이 글자만) -->
       <div class="brand">
         <div class="brand-row">
-          <!-- 로고 (asus-logo.png 업로드 되어 있어야 함) -->
-          <img src="asus-logo.png" alt="ASUS 로고" class="brand-logo" />
           <div>
             <div class="brand-title">ASUS서비스센터</div>
             <div class="brand-desc">ASUS 노트북 / PC 전문 수리</div>
@@ -23,67 +23,73 @@
         </div>
       </div>
 
+      <!-- 가운데 전화 정보 -->
       <div class="call-box">
         <div class="call-label">대표번호</div>
-        <!-- 전화번호 누르면 아래 접수폼 섹션으로 이동 -->
         <a class="call-number" href="#request-form">1544-6068</a>
         <div class="call-hours">평일 09:30 ~ 18:00</div>
       </div>
 
-      <!-- 상담하기 버튼도 접수폼으로 스크롤 이동 -->
+      <!-- 우측 상담 버튼 -->
       <a class="call-button" href="#request-form">상담하기</a>
     </div>
   </header>
 
-  <!-- 히어로 섹션 (상단 메인 영역) -->
+  <!-- 상단 히어로 영역 (밝은 톤) -->
   <section class="hero">
-    <div class="hero-overlay">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <h1>
-            ASUS 노트북 / 데스크탑<br />
-            전문 수리센터
-          </h1>
-          <p class="hero-sub">
-            당일 점검 · 방문 접수 · 택배 수리 지원<br />
-            정품 부품 / 합리적인 비용으로 신속하게 해결합니다.
-          </p>
+    <div class="container hero-inner">
 
-          <div class="hero-actions">
-            <a class="hero-call" href="#request-form">📞 온라인 접수 바로가기</a>
-            <a class="hero-goform" href="#request-form">수리 접수하기</a>
-          </div>
+      <!-- 소개 / 장점 / CTA -->
+      <div class="hero-text">
+        <h1>
+          ASUS 노트북 / 데스크탑<br />
+          전문 수리센터
+        </h1>
 
-          <ul class="hero-highlights">
-            <li>부팅 불가 / 전원 불량</li>
-            <li>액정 파손 / 화면깨짐</li>
-            <li>발열 / 팬소음 / 써멀관리</li>
-            <li>데이터 복구 / 백업</li>
-          </ul>
+        <p class="hero-sub">
+          당일 점검 · 방문 접수 · 택배 수리 지원<br />
+          정품 부품 / 합리적인 비용으로 신속하게 해결합니다.
+        </p>
+
+        <div class="hero-actions">
+          <a class="hero-call" href="#request-form">📞 온라인 접수 바로가기</a>
+          <a class="hero-goform" href="#request-form">수리 접수하기</a>
         </div>
 
-        <div class="hero-card">
-          <div class="hero-card-head">빠른 상담 안내</div>
-          <div class="hero-card-body">
-            <div class="hero-card-row">
-              <span class="label">대표번호</span>
-              <a class="value tel" href="#request-form">1544-6068</a>
-            </div>
-            <div class="hero-card-row">
-              <span class="label">주소</span>
-              <span class="value">서울 금천구 가산동 687</span>
-            </div>
-            <div class="hero-card-row">
-              <span class="label">영업시간</span>
-              <span class="value">평일 09:30 ~ 18:00</span>
-            </div>
-            <div class="hero-card-row">
-              <span class="label">점검</span>
-              <span class="value">현장 / 택배 / 출장 가능</span>
-            </div>
+        <ul class="hero-highlights">
+          <li>부팅 불가 / 전원 불량</li>
+          <li>액정 파손 / 화면깨짐</li>
+          <li>발열 / 팬소음 / 써멀관리</li>
+          <li>데이터 복구 / 백업</li>
+        </ul>
+      </div>
+
+      <!-- 오른쪽 상담 카드 -->
+      <div class="hero-card">
+        <div class="hero-card-head">빠른 상담 안내</div>
+        <div class="hero-card-body">
+          <div class="hero-card-row">
+            <span class="label">대표번호</span>
+            <a class="value tel" href="#request-form">1544-6068</a>
           </div>
-          <a class="hero-card-cta" href="#request-form">온라인 접수 바로가기</a>
+
+          <div class="hero-card-row">
+            <span class="label">주소</span>
+            <span class="value">687 Gasan-dong, Geumcheon-gu, Seoul</span>
+          </div>
+
+          <div class="hero-card-row">
+            <span class="label">영업시간</span>
+            <span class="value">평일 09:30 ~ 18:00</span>
+          </div>
+
+          <div class="hero-card-row">
+            <span class="label">점검</span>
+            <span class="value">현장 / 택배 / 출장 가능</span>
+          </div>
         </div>
+
+        <a class="hero-card-cta" href="#request-form">온라인 접수 바로가기</a>
       </div>
     </div>
   </section>
@@ -153,6 +159,7 @@
   <!-- 온라인 접수 폼 -->
   <section class="request-section" id="request-form">
     <div class="container request-inner">
+      <!-- 안내 -->
       <div class="request-info">
         <h2>수리 / 점검 접수</h2>
         <p class="section-desc">
@@ -172,6 +179,7 @@
         </div>
       </div>
 
+      <!-- 폼 -->
       <form class="request-form-card" id="serviceForm">
         <div class="form-head">온라인 접수 / 문의</div>
 
@@ -270,7 +278,7 @@
     </div>
   </footer>
 
-  <!-- 제출 성공 안내 박스 (처음엔 숨김) -->
+  <!-- 제출 성공 안내 (초기 숨김) -->
   <div class="submit-success" id="submitSuccess" style="display:none;">
     접수되었습니다. 전문 엔지니어가 빠르게 연락드리겠습니다.<br />
     급하신 경우 1544-6068 로 바로 문의 주시면 우선 상담 도와드립니다.
