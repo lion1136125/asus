@@ -142,7 +142,7 @@ body {
 
 /* LEFT BLOCK */
 .hero-left-block {
-  background: rgba(0,0,0,0.28); /* 더 옅게 */
+  background: rgba(0,0,0,0.28); /* 반투명 */
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
@@ -206,22 +206,26 @@ body {
   font-weight: 600;
 }
 
-/* RIGHT CARD */
+/* RIGHT CARD (빠른 상담 안내) */
 .hero-right {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
+/* 바뀐 부분: 카드도 반투명 박스로 */
 .hero-card {
-  background: #fff;
+  background: rgba(0,0,0,0.28); /* 반투명 배경 */
   border-radius: var(--radius-card);
-  box-shadow: var(--shadow-card);
-  border: 1px solid var(--line-soft);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.25);
   overflow: hidden;
-  color: var(--text-main);
+  color: #fff;
   max-width: 360px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
+
 .hero-card-head {
   background: var(--brand-blue);
   color: #fff;
@@ -242,19 +246,19 @@ body {
   flex-wrap: wrap;
 }
 .hero-card-row .label {
-  color: var(--text-dim);
+  color: rgba(255,255,255,0.75);
   font-size: 0.8rem;
   min-width: 70px;
 }
 .hero-card-row .value {
   font-weight: 600;
-  color: var(--text-main);
+  color: #fff;
 }
 
 /* 강조된 대표번호 */
 .hero-card-phone .value {
   font-size: 1.3rem;
-  color: var(--brand-blue);
+  color: #fff;
   font-weight: 700;
   line-height: 1.2;
   text-decoration: none;
@@ -266,13 +270,13 @@ body {
 .hero-card-cta {
   display: block;
   text-align: center;
-  background: rgba(0,82,204,0.07);
-  color: var(--brand-blue);
+  background: rgba(0,82,204,0.15);
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
   padding: 14px 16px 16px;
-  border-top: 1px solid var(--line-soft);
+  border-top: 1px solid rgba(255,255,255,0.25);
 }
 
 /* SERVICES */
@@ -379,7 +383,7 @@ body {
   padding: 16px;
   font-size: 0.9rem;
   line-height: 1.5;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.07);
 }
 .request-callout a {
   color: var(--brand-blue);
@@ -390,7 +394,7 @@ body {
 .request-form-card {
   background: #fff;
   border-radius: var(--radius-card);
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.07);
   border: 1px solid var(--line-soft);
   padding: 0 0 16px;
   overflow: hidden;
