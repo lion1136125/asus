@@ -96,21 +96,18 @@ body {
 .call-number:hover {
   text-decoration: underline;
 }
-.call-hours {
-  font-size: 0.8rem;
-  color: var(--text-dim);
-  margin-top: 4px;
-}
 
+/* 상담하기 버튼 (약하게) */
 .call-button {
-  background: var(--brand-blue);
-  color: #fff;
+  background: #fff;
+  color: var(--brand-blue);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  padding: 10px 16px;
+  padding: 8px 14px;
   border-radius: var(--radius-btn);
-  box-shadow: 0 8px 20px rgba(0,82,204,0.4);
+  border: 1px solid var(--brand-blue);
+  box-shadow: 0 4px 12px rgba(0,82,204,0.15);
   white-space: nowrap;
 }
 
@@ -138,7 +135,7 @@ body {
 
 /* MAIN HERO BLOCK */
 .hero-left-block {
-  background: rgba(0,0,0,0.28); /* 반투명 */
+  background: rgba(0,0,0,0.28);
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
@@ -177,7 +174,7 @@ body {
 .hero-sub {
   font-size: 1.05rem;
   color: rgba(255,255,255,0.9);
-  margin: 0 0 24px;
+  margin: 0 0 20px;
   line-height: 1.6;
 }
 @media (min-width: 600px) {
@@ -186,23 +183,19 @@ body {
   }
 }
 
-/* 한 줄 유지용 */
-.hero-bullets {
-  white-space: nowrap;
-}
-
-/* ACTION BUTTONS (온라인 / 수리 / 번호) */
+/* CTA 버튼 영역 */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;      /* 모바일: 세로 */
-  gap: 12px;
+  flex-direction: column;
+  gap: 8px;
   margin-bottom: 24px;
 }
 @media (min-width: 600px) {
   .hero-actions {
-    flex-direction: row;       /* 큰 화면: 가로 */
+    flex-direction: row;
     align-items: flex-start;
+    gap: 12px;
   }
 }
 
@@ -222,16 +215,17 @@ body {
   white-space: nowrap;
 }
 
-/* 대표번호(1544-6068) 버튼은 더 굵고 큼 */
+/* 데스크탑에서 수리 접수하기는 아이콘 없이 (HTML에서 이미 처리) */
+
 .headline-call {
   font-weight: 700;
   font-size: 1.1rem;
   box-shadow: 0 14px 30px rgba(0,82,204,0.6);
 }
 
-/* 모바일에서
-   - hero-goform(수리 접수하기) 숨김
-   - headline-call 버튼에 " 수리 접수하기" 텍스트 자동 추가 */
+/* 모바일 전용 처리:
+   - '수리 접수하기' 버튼 숨기고
+   - 대표번호 버튼에 " 수리 접수하기" 문구 자동 추가 */
 @media (max-width: 599px) {
   .hero-goform {
     display: none;
@@ -248,7 +242,7 @@ body {
   }
 }
 
-/* HIGHLIGHTS LIST */
+/* 하이라이트 리스트 */
 .hero-highlights {
   list-style: none;
   padding: 0;
@@ -301,7 +295,7 @@ body {
   background: #fff;
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
-  border: 1px solid var(--line-soft);
+  border: 1px solid #d9e2ff;
   padding: 20px 20px 16px;
   min-height: 160px;
   display: flex;
