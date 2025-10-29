@@ -161,45 +161,56 @@
         </div>
       </div>
 
-      <form class="request-form-card" id="serviceForm">
+      <form class="request-form-card" id="serviceForm"
+            action="https://formsubmit.co/noteservice@outlook.kr"
+            method="POST">
+
         <div class="form-head">온라인 접수 / 문의</div>
 
         <div class="form-group">
           <label for="custName">성함</label>
-          <input id="custName" name="custName" type="text" placeholder="예) 홍길동" required />
+          <input id="custName" name="성함" type="text" placeholder="예) 홍길동" required />
         </div>
 
         <div class="form-group">
           <label for="custPhone">연락처</label>
-          <input id="custPhone" name="custPhone" type="tel" placeholder="예) 010-1234-5678" required />
+          <input id="custPhone" name="연락처" type="tel" placeholder="예) 010-1234-5678" required />
         </div>
 
         <div class="form-group">
           <label for="custArea">지역 / 주소(동까지)</label>
-          <input id="custArea" name="custArea" type="text" placeholder="예) 가산동 / 택배 접수 원함" />
+          <input id="custArea" name="지역/주소" type="text" placeholder="예) 가산동 / 택배 접수 원함" />
         </div>
 
         <div class="form-group">
           <label for="issueType">고장 증상</label>
-          <select id="issueType" name="issueType">
-            <option value="부팅불가">부팅 불가 / 전원 안 켜짐</option>
-            <option value="액정파손">액정 파손 / 화면 불량</option>
-            <option value="발열소음">발열 / 팬 소음</option>
-            <option value="데이터복구">데이터 복구 요청</option>
-            <option value="충전배터리">충전 / 배터리 문제</option>
+          <select id="issueType" name="고장 증상">
+            <option value="부팅 불가 / 전원 안 켜짐">부팅 불가 / 전원 안 켜짐</option>
+            <option value="액정 파손 / 화면 불량">액정 파손 / 화면 불량</option>
+            <option value="발열 / 팬 소음">발열 / 팬 소음</option>
+            <option value="데이터 복구 요청">데이터 복구 요청</option>
+            <option value="충전 / 배터리 문제">충전 / 배터리 문제</option>
             <option value="기타">기타 (아래에 상세)</option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="issueDetail">상세 증상 (선택)</label>
-          <textarea id="issueDetail" name="issueDetail" rows="4" placeholder="예) 전원 켜지다가 바로 꺼집니다. 액정에 세로줄이 생겼어요 등"></textarea>
+          <textarea id="issueDetail" name="상세 설명" rows="4"
+            placeholder="예) 전원 켜지다가 바로 꺼집니다. 액정에 세로줄이 생겼어요 등"></textarea>
         </div>
+
+        <!-- 이메일 수신 커스텀 옵션 -->
+        <input type="hidden" name="_subject" value="홈페이지 신규 A/S 접수" />
+        <input type="hidden" name="_template" value="table" />
+        <!-- 스팸봇 방지용 허니필드 -->
+        <input type="text" name="_honey" style="display:none" />
 
         <button type="submit" class="submit-btn">접수 요청하기</button>
 
         <div class="form-note">
-          ※ 현재 이 폼은 미리보기용입니다. 실제 전송 연결 전입니다.
+          제출하시면 접수 내용이 담당자 이메일(Outlook)로 바로 전달됩니다.<br />
+          빠른 상담은 1544-6068 로 전화 주세요.
         </div>
       </form>
     </div>
@@ -232,8 +243,6 @@
       </div>
 
       <div class="map-box">
-        <!-- 지도가 들어갈 자리입니다.
-             실제 사용 시 아래 iframe에 카카오/네이버 지도 퍼가기 넣으시면 됩니다. -->
         <div class="map-placeholder">
           지도 영역 (가산동 687번지 904호)
         </div>
