@@ -1,7 +1,3 @@
-// AJAX로 FormSubmit에 보내고 파란 성공 메시지 띄우는 버전
-// 주의: noteservice@outlook.kr 메일함에서 FormSubmit 확인(승인) 메일을 한 번 눌러야
-// 이후부터 고객 접수 내용이 바로 메일로 들어옵니다.
-
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("serviceForm");
   const successBox = document.getElementById("submitSuccess");
@@ -9,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!form) return;
 
   form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // 기본 submit 막고 우리가 직접 전송
+    e.preventDefault();
 
     const name = document.getElementById("custName").value.trim();
     const phone = document.getElementById("custPhone").value.trim();
