@@ -163,7 +163,8 @@
 
       <form class="request-form-card" id="serviceForm"
             action="https://formsubmit.co/noteservice@outlook.kr"
-            method="POST">
+            method="POST"
+            target="hiddenFrame">
 
         <div class="form-head">온라인 접수 / 문의</div>
 
@@ -200,10 +201,9 @@
             placeholder="예) 전원 켜지다가 바로 꺼집니다. 액정에 세로줄이 생겼어요 등"></textarea>
         </div>
 
-        <!-- 이메일용 설정 -->
+        <!-- 이메일 제목/형식 지정 + 스팸봇 방지 -->
         <input type="hidden" name="_subject" value="홈페이지 신규 A/S 접수" />
         <input type="hidden" name="_template" value="table" />
-        <!-- 스팸 방지 -->
         <input type="text" name="_honey" style="display:none" />
 
         <button type="submit" class="submit-btn">접수 요청하기</button>
@@ -267,6 +267,15 @@
       </div>
     </div>
   </footer>
+
+  <!-- 접수 성공 안내 박스 (초기 숨김) -->
+  <div class="submit-success" id="submitSuccess" style="display:none;">
+    접수되었습니다. 전문 엔지니어가 빠르게 연락드리겠습니다.<br />
+    급하신 경우 1544-6068 로 바로 전화 주시면 우선 상담 도와드립니다.
+  </div>
+
+  <!-- 페이지 이동 없이 폼 전송 받을 숨은 iframe -->
+  <iframe name="hiddenFrame" style="display:none;"></iframe>
 
   <script src="script.js"></script>
 </body>

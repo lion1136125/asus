@@ -547,3 +547,32 @@ body {
   color: #b5b9d8;
   word-break: keep-all;
 }
+
+/* ===== 접수 성공 안내 띠 ===== */
+.submit-success {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9999;
+
+  background: #0052cc;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.2);
+
+  padding: 16px 20px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+  font-weight: 500;
+}
+@media (min-width: 480px) {
+  .submit-success {
+    left: auto;
+    right: 24px;
+    bottom: 24px;
+    max-width: 320px;
+  }
+}
