@@ -186,6 +186,11 @@ body {
   }
 }
 
+/* 한 줄 유지용 */
+.hero-bullets {
+  white-space: nowrap;
+}
+
 /* ACTION BUTTONS (온라인 / 수리 / 번호) */
 .hero-actions {
   display: flex;
@@ -225,9 +230,8 @@ body {
 }
 
 /* 모바일에서
-   - hero-goform(📞 수리 접수하기) 숨김
-   - headline-call 버튼에 "수리 접수하기" 텍스트를 덧붙여서
-     한 번만 보여줌 */
+   - hero-goform(수리 접수하기) 숨김
+   - headline-call 버튼에 " 수리 접수하기" 텍스트 자동 추가 */
 @media (max-width: 599px) {
   .hero-goform {
     display: none;
