@@ -88,7 +88,7 @@ body {
 .call-number {
   color: var(--brand-blue);
   text-decoration: none;
-  font-size: 1.5rem;        /* 더 크게 */
+  font-size: 1.5rem;
   font-weight: 700;
   display: block;
   line-height: 1.2;
@@ -114,11 +114,10 @@ body {
   white-space: nowrap;
 }
 
-/* HERO (파란 계열 그라데이션 배경) */
+/* HERO SECTION */
 .hero {
   position: relative;
-  background-color: #6fa9ff;
-  background-image: radial-gradient(circle at 30% 30%, #dbeeff 0%, #a8ccff 40%, #6fa9ff 70%, #3c5fae 100%);
+  background-image: url('hero-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -127,6 +126,7 @@ body {
 
 .hero-overlay {
   padding: 48px 0 64px;
+  background: radial-gradient(circle at 30% 30%, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.55) 100%);
 }
 
 .hero-inner {
@@ -140,9 +140,9 @@ body {
   }
 }
 
-/* 왼쪽 어두운 박스 */
+/* LEFT BLOCK */
 .hero-left-block {
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.28); /* 더 옅게 */
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
@@ -164,12 +164,12 @@ body {
 }
 .hero-sub {
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.85);
   margin: 0 0 24px;
   line-height: 1.5;
 }
 
-/* 버튼들 */
+/* ACTION BUTTONS */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -185,12 +185,12 @@ body {
   padding: 12px 16px;
   border-radius: var(--radius-btn);
   border: 2px solid transparent;
-  background: var(--brand-blue);                /* 둘 다 파란색 */
+  background: var(--brand-blue);
   color: #fff;
   box-shadow: 0 10px 25px rgba(0,82,204,0.6);
 }
 
-/* 체크 리스트 */
+/* HIGHLIGHTS LIST */
 .hero-highlights {
   list-style: none;
   padding: 0;
@@ -206,7 +206,7 @@ body {
   font-weight: 600;
 }
 
-/* 오른쪽 박스 */
+/* RIGHT CARD */
 .hero-right {
   display: flex;
   flex-direction: column;
@@ -251,7 +251,7 @@ body {
   color: var(--text-main);
 }
 
-/* 대표번호 강조 */
+/* 강조된 대표번호 */
 .hero-card-phone .value {
   font-size: 1.3rem;
   color: var(--brand-blue);
@@ -501,7 +501,7 @@ body {
   text-decoration: underline;
 }
 
-/* 접수 성공 안내 띠 */
+/* SUCCESS POPUP */
 .submit-success {
   position: fixed;
   left: 16px;
