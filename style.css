@@ -1,6 +1,8 @@
 :root {
   --brand-blue: #0052cc;
+  --brand-blue-light: rgba(0,0,0,0.4);
   --text-main: #1a1a1a;
+  --text-light: #fff;
   --text-dim: #666;
   --bg-page: #ffffff;
   --bg-section: #f7faff;
@@ -10,7 +12,6 @@
   --shadow-card: 0 16px 40px rgba(0,0,0,0.07);
   --max-width: 1280px;
   --container-pad: 16px;
-
   font-size: 16px;
   line-height: 1.5;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans KR",
@@ -20,16 +21,15 @@
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  margin: 0;
-  padding: 0;
 }
 
 body {
   background: var(--bg-page);
   color: var(--text-main);
+  margin: 0;
 }
 
-/* 공용 컨테이너 */
+/* UTIL */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -48,7 +48,7 @@ body {
 
 .header-inner {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 12px 0;
@@ -57,20 +57,14 @@ body {
 
 .brand-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
 .brand-logo {
   height: 28px;
-  width: auto;
   object-fit: contain;
-  display: block;
-  margin-top: 2px;
-}
-
-.brand-textblock {
-  line-height: 1.3;
 }
 
 .brand-title {
@@ -85,7 +79,7 @@ body {
 }
 
 .call-box {
-  text-align: center;
+  text-align: right;
   line-height: 1.2;
 }
 .call-label {
@@ -120,26 +114,22 @@ body {
   white-space: nowrap;
 }
 
-/* HERO (상단 소개 영역: 배경사진 + 어둡게 오버레이) */
+/* HERO (상단 큰 배경: 하늘색 계열 그라데이션) */
 .hero {
   position: relative;
-  background-color: #0f172a;
-  background-image: url("hero-bg.jpg");
+  background-color: #6fa9ff;
+  background-image: radial-gradient(circle at 30% 30%, #dbeeff 0%, #a8ccff 40%, #6fa9ff 70%, #3c5fae 100%);
   background-size: cover;
   background-position: center;
-  padding: 48px 0 64px;
-  color: #fff;
+  background-repeat: no-repeat;
+  color: var(--text-light);
 }
 
 .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.65) 70%);
+  padding: 48px 0 64px;
 }
 
 .hero-inner {
-  position: relative;
-  z-index: 1;
   display: grid;
   gap: 32px;
 }
@@ -151,18 +141,17 @@ body {
 }
 
 .hero-text h1 {
-  font-size: 1.8rem;
-  line-height: 1.35;
-  font-weight: 700;
-  color: #fff;
   margin: 0 0 16px;
+  font-size: 1.7rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--text-light);
 }
 @media (min-width: 600px) {
   .hero-text h1 {
     font-size: 2rem;
   }
 }
-
 .hero-sub {
   font-size: 0.95rem;
   color: rgba(255,255,255,0.8);
@@ -170,6 +159,7 @@ body {
   line-height: 1.5;
 }
 
+/* 버튼들 */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -192,34 +182,36 @@ body {
   box-shadow: 0 10px 25px rgba(0,82,204,0.6);
 }
 .hero-goform {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.15);
   color: #fff;
-  border-color: #fff;
-  border: 2px solid rgba(255,255,255,0.6);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  border-color: rgba(255,255,255,0.4);
+  border: 2px solid rgba(255,255,255,0.4);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
+/* 체크 리스트 */
 .hero-highlights {
   list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
   font-size: 0.9rem;
-  color: #fff;
+  color: var(--text-light);
   display: grid;
-  gap: 8px;
-}
-.hero-highlights li {
-  display: flex;
-  align-items: flex-start;
   gap: 6px;
 }
 .hero-highlights li::before {
-  content: "✔";
-  color: var(--brand-blue);
+  content: "✔ ";
+  color: #4cc0ff;
   font-weight: 600;
-  display: inline-block;
-  min-width: 1rem;
 }
 
-/* HERO 카드 (오른쪽 상담 안내) */
+/* 빠른 상담 안내 카드 */
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
 .hero-card {
   background: #fff;
   border-radius: var(--radius-card);
@@ -227,6 +219,7 @@ body {
   border: 1px solid var(--line-soft);
   overflow: hidden;
   color: var(--text-main);
+  max-width: 360px;
 }
 .hero-card-head {
   background: var(--brand-blue);
@@ -243,9 +236,9 @@ body {
 }
 .hero-card-row {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   gap: 12px;
+  flex-wrap: wrap;
 }
 .hero-card-row .label {
   color: var(--text-dim);
@@ -267,7 +260,7 @@ body {
 .hero-card-cta {
   display: block;
   text-align: center;
-  background: #f1f4ff;
+  background: rgba(0,82,204,0.07);
   color: var(--brand-blue);
   text-decoration: none;
   font-weight: 600;
@@ -276,17 +269,18 @@ body {
   border-top: 1px solid var(--line-soft);
 }
 
-/* SERVICES */
+/* SERVICES (흰 배경 아래 영역) */
 .services {
   background: #fff;
   padding: 56px 0;
+  border-top: 1px solid #eef2ff;
 }
 .services h2 {
+  margin: 0 0 8px;
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--text-main);
   text-align: center;
-  margin-bottom: 8px;
 }
 .section-desc {
   margin: 0 auto 32px;
@@ -301,14 +295,9 @@ body {
   display: grid;
   gap: 16px;
 }
-@media (min-width: 600px) {
-  .service-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 @media (min-width: 960px) {
   .service-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -339,7 +328,7 @@ body {
   line-height: 1.4;
 }
 
-/* REQUEST FORM 섹션 */
+/* REQUEST FORM */
 .request-section {
   background: var(--bg-section);
   border-top: 1px solid #eef2ff;
@@ -358,10 +347,10 @@ body {
 }
 
 .request-info h2 {
+  margin: 0 0 8px;
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--text-main);
-  margin-bottom: 8px;
 }
 .request-highlights {
   list-style: none;
@@ -407,6 +396,7 @@ body {
   padding: 14px 16px;
   font-size: 0.95rem;
 }
+
 .form-group {
   display: grid;
   gap: 6px;
@@ -468,95 +458,7 @@ body {
   line-height: 1.4;
 }
 
-/* LOCATION 섹션 */
-.location {
-  background: #fff;
-  border-top: 1px solid #eef2ff;
-  padding: 56px 0;
-}
-.location-inner {
-  display: grid;
-  gap: 32px;
-}
-@media (min-width: 960px) {
-  .location-inner {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-.location-info h2 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 12px;
-}
-.addr {
-  font-size: 0.95rem;
-  color: var(--text-main);
-  line-height: 1.5;
-  margin-bottom: 24px;
-}
-.loc-detail {
-  display: grid;
-  gap: 12px;
-  font-size: 0.9rem;
-}
-.loc-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.loc-label {
-  font-weight: 600;
-  min-width: 90px;
-  color: var(--text-main);
-}
-.loc-value {
-  color: var(--text-dim);
-}
-.loc-value.tel,
-.loc-value.tel:visited {
-  color: var(--brand-blue);
-  text-decoration: none;
-  font-weight: 600;
-}
-.loc-value.tel:hover {
-  text-decoration: underline;
-}
-
-.map-box {
-  min-height: 240px;
-  border-radius: var(--radius-card);
-  border: 1px solid var(--line-soft);
-  background: #fff;
-  box-shadow: var(--shadow-card);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-}
-.map-placeholder {
-  width: 100%;
-  height: 200px;
-  background: repeating-linear-gradient(
-    45deg,
-    #eef2ff,
-    #eef2ff 10px,
-    #ffffff 10px,
-    #ffffff 20px
-  );
-  border-radius: var(--radius-card);
-  border: 1px solid var(--line-soft);
-  color: var(--text-dim);
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 16px;
-  line-height: 1.4;
-}
-
-/* 푸터 */
+/* FOOTER */
 .site-footer {
   background: #0f1326;
   color: #b5b9d8;
@@ -585,7 +487,7 @@ body {
   word-break: keep-all;
 }
 
-/* 제출 성공 안내 박스 */
+/* ===== 접수 성공 안내 띠 ===== */
 .submit-success {
   position: fixed;
   left: 16px;
