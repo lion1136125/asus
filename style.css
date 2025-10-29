@@ -1,6 +1,5 @@
 :root {
   --brand-blue: #0052cc;
-  --brand-blue-light: #e8f0ff;
   --text-main: #1a1a1a;
   --text-dim: #666;
   --bg-page: #ffffff;
@@ -61,6 +60,19 @@ body {
   align-items: flex-start;
   gap: 8px;
 }
+
+.brand-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-top: 2px;
+}
+
+.brand-textblock {
+  line-height: 1.3;
+}
+
 .brand-title {
   font-size: 1.1rem;
   font-weight: 600;
@@ -108,14 +120,26 @@ body {
   white-space: nowrap;
 }
 
-/* HERO (상단 소개 영역: 밝은 배경) */
+/* HERO (상단 소개 영역: 배경사진 + 어둡게 오버레이) */
 .hero {
-  background: radial-gradient(circle at 20% 20%, #ffffff 0%, #eef3ff 60%, #dbe7ff 100%);
+  position: relative;
+  background-color: #0f172a;
+  background-image: url("hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
   padding: 48px 0 64px;
-  border-bottom: 1px solid #dfe5ff;
+  color: #fff;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.65) 70%);
 }
 
 .hero-inner {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: 32px;
 }
@@ -130,7 +154,7 @@ body {
   font-size: 1.8rem;
   line-height: 1.35;
   font-weight: 700;
-  color: var(--text-main);
+  color: #fff;
   margin: 0 0 16px;
 }
 @media (min-width: 600px) {
@@ -141,7 +165,7 @@ body {
 
 .hero-sub {
   font-size: 0.95rem;
-  color: var(--text-dim);
+  color: rgba(255,255,255,0.8);
   margin: 0 0 24px;
   line-height: 1.5;
 }
@@ -165,18 +189,20 @@ body {
 .hero-call {
   background: var(--brand-blue);
   color: #fff;
-  box-shadow: 0 10px 25px rgba(0,82,204,0.4);
+  box-shadow: 0 10px 25px rgba(0,82,204,0.6);
 }
 .hero-goform {
-  background: #fff;
-  color: var(--brand-blue);
-  border-color: var(--brand-blue);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border-color: #fff;
+  border: 2px solid rgba(255,255,255,0.6);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
 
 .hero-highlights {
   list-style: none;
   font-size: 0.9rem;
-  color: var(--text-main);
+  color: #fff;
   display: grid;
   gap: 8px;
 }
