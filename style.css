@@ -1,6 +1,5 @@
 :root {
   --brand-blue: #0052cc;
-  --brand-blue-light: rgba(0,0,0,0.4);
   --text-main: #1a1a1a;
   --text-light: #fff;
   --text-dim: #666;
@@ -89,15 +88,16 @@ body {
 .call-number {
   color: var(--brand-blue);
   text-decoration: none;
-  font-size: 1.25rem;
+  font-size: 1.5rem;        /* 더 크게 */
   font-weight: 700;
   display: block;
+  line-height: 1.2;
 }
 .call-number:hover {
   text-decoration: underline;
 }
 .call-hours {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: var(--text-dim);
   margin-top: 4px;
 }
@@ -114,7 +114,7 @@ body {
   white-space: nowrap;
 }
 
-/* HERO (상단 큰 배경: 하늘색 계열 그라데이션) */
+/* HERO (파란 계열 그라데이션 배경) */
 .hero {
   position: relative;
   background-color: #6fa9ff;
@@ -138,6 +138,16 @@ body {
     grid-template-columns: 1fr 360px;
     align-items: flex-start;
   }
+}
+
+/* 왼쪽 어두운 박스 */
+.hero-left-block {
+  background: rgba(0,0,0,0.4);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  max-width: 480px;
+  color: #fff;
 }
 
 .hero-text h1 {
@@ -175,18 +185,9 @@ body {
   padding: 12px 16px;
   border-radius: var(--radius-btn);
   border: 2px solid transparent;
-}
-.hero-call {
-  background: var(--brand-blue);
+  background: var(--brand-blue);                /* 둘 다 파란색 */
   color: #fff;
   box-shadow: 0 10px 25px rgba(0,82,204,0.6);
-}
-.hero-goform {
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  border-color: rgba(255,255,255,0.4);
-  border: 2px solid rgba(255,255,255,0.4);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
 /* 체크 리스트 */
@@ -205,7 +206,7 @@ body {
   font-weight: 600;
 }
 
-/* 빠른 상담 안내 카드 */
+/* 오른쪽 박스 */
 .hero-right {
   display: flex;
   flex-direction: column;
@@ -249,14 +250,19 @@ body {
   font-weight: 600;
   color: var(--text-main);
 }
-.hero-card-row .tel {
+
+/* 대표번호 강조 */
+.hero-card-phone .value {
+  font-size: 1.3rem;
   color: var(--brand-blue);
+  font-weight: 700;
+  line-height: 1.2;
   text-decoration: none;
-  font-weight: 600;
 }
-.hero-card-row .tel:hover {
+.hero-card-phone .value:hover {
   text-decoration: underline;
 }
+
 .hero-card-cta {
   display: block;
   text-align: center;
@@ -269,7 +275,7 @@ body {
   border-top: 1px solid var(--line-soft);
 }
 
-/* SERVICES (흰 배경 아래 영역) */
+/* SERVICES */
 .services {
   background: #fff;
   padding: 56px 0;
@@ -486,8 +492,16 @@ body {
   color: #b5b9d8;
   word-break: keep-all;
 }
+.footer-tel {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.footer-tel:hover {
+  text-decoration: underline;
+}
 
-/* ===== 접수 성공 안내 띠 ===== */
+/* 접수 성공 안내 띠 */
 .submit-success {
   position: fixed;
   left: 16px;
