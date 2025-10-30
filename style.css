@@ -77,22 +77,9 @@ body {
   margin-top: 4px;
 }
 
-.call-box {
-  text-align: right;
-  line-height: 1.2;
-}
-.call-label {
-  font-size: 0.7rem;
-  color: var(--text-dim);
-}
-.call-number {
-  color: var(--brand-blue);
-  text-decoration: none;
-  font-size: 1.6rem;
-  font-weight: 700;
-  display: block;
-  line-height: 1.2;
-}
+.call-box { display:flex; align-items:baseline; gap:8px; }
+.call-label { font-size:0.8rem; color:var(--text-dim); font-weight:600; }
+.call-number { color: var(--brand-blue); text-decoration: none; font-size: 1.6rem; font-weight: 700; line-height:1; }
 .call-number:hover {
   text-decoration: underline;
 }
