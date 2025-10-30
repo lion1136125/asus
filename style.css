@@ -532,3 +532,25 @@ body {
 .footer-tel{ color:#fff; text-decoration:none; font-weight:700; }
 .footer-tel:hover{ text-decoration:underline; }
 
+
+
+/* ===== Desktop header call-box hard override ===== */
+@media (min-width: 960px){
+  .site-header .header-inner .call-box{
+    display:flex !important;
+    align-items:baseline !important;
+    gap:8px !important;
+  }
+  .site-header .header-inner .call-box .call-label{
+    font-size:0.85rem !important;
+    font-weight:600 !important;
+    color:var(--text-dim) !important;
+    margin-right:6px !important;
+    order:0;
+  }
+  .site-header .header-inner .call-box .call-number{
+    line-height:1 !important;
+    text-align:left !important;
+    order:1;
+  }
+}
